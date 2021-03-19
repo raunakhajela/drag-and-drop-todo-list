@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+:root {
+    --BrightBlue: hsl(220, 98%, 61%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+    --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+    --LightGrayishBlue: hsl(233, 11%, 84%);
+    --DarkGrayishBlue: hsl(236, 9%, 61%);
+    --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+    /* darkMode */
+    --DMVeryDarkBlue: hsl(235, 21%, 11%);
+    --DMVeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+    --DMLightGrayishBlue: hsl(234, 39%, 85%);
+    --DMLightGrayishBlue: hsl(236, 33%, 92%);
+    --DMDarkGrayishBlue: hsl(234, 11%, 52%);
+    --DMVeryDarkGrayishBlue: hsl(233, 14%, 35%);
+    --DMVeryDarkGrayishBlue: hsl(237, 14%, 26%);
+    --box-shadow: 0px 0px 10px var(--VeryLightGrayishBlue);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background: url('images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-color: var(--VeryLightGray);
+}
+
+.mainContainer {
+    width: 40%;
+    margin: 70px auto;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    pointer-events: none;
+}
+
+.todo {
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.addNote {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 15px 0;
+    border-radius: 5px;
+}
+
+.addNote-dark {
+    background-color: var(--DMVeryDarkBlue);
+}
+
+.inputForNewNote {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.checkBtn {
+    width: 22px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    border: 1px solid var(--LightGrayishBlue);
+    cursor: pointer;
+}
+
+.NcheckBtn {
+    width: 22px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    border: 1px solid var(--LightGrayishBlue);
+}
+
+.displayNotes {
+    width: 100%;
+    margin-top: 50px;
+    background-color: transparent;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    cursor: move;
+    position: relative;
+    z-index: 1;
+}
+
+.displayNotes-dark {
+    box-shadow: unset;
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid var(--VeryLightGrayishBlue) !important;
+}
+
+.listItem-dark {
+    background-color: var(--DMVeryDarkDesaturatedBlue);
+    color: var(--DMLightGrayishBlue);
+    border-bottom: 1px solid var(--DMVeryDarkGrayishBlue) !important;
+}
+
+.noteOutput {
+    width: 100%;
+}
+
+.actionBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 0.7em;
+    color: var(--DarkGrayishBlue);
+    font-weight: 700;
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 0px 10px var(--VeryLightGrayishBlue);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.actionBtns-dark {
+    background-color: var(--DMVeryDarkGrayishBlue) !important;
+    color: white;
+    box-shadow: unset;
+}
+
+.filterBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+}
+
+.mx-2 {
+    margin: 0 5px;
+}
+
+.dragging {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.active {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.activeCheckBox {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.selected {
+    color: var(--BrightBlue);
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.hide {
+    display: none;
+}
+
+.notify {
+    margin: 20px;
+    text-align: center;
+    color: var(--DarkGrayishBlue);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: auto;
+    }
+    .mainContainer {
+        width: 90%;
+        margin: 70px auto;
+    }
+    .actionBtns {
+        margin: 30px auto;
+    }
+    .filterBtns {
+        justify-content: space-between;
+    }
+    .mx-2 {
+        margin: unset;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+}
